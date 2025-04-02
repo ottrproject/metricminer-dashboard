@@ -1,5 +1,5 @@
 
-# metricminer dashboard template <img src="https://raw.githubusercontent.com/fhdsl/metricminer/main/resources/metricminer-gnome.png" width = "100">
+# metricminer dashboard template <img src="https://raw.githubusercontent.com/ottrproject/metricminer/main/resources/metricminer-gnome.png" width = "100">
 
 This repository is a template dashboard website for you to display metrics mined from various places on the web using metricminer.
 
@@ -7,7 +7,7 @@ This repository is a template dashboard website for you to display metrics mined
 
 ## Setting up your dashboard repository
 
-1. To get started, go to the [metricminer-dashboard template GitHub repo](https://github.com/fhdsl/metricminer-dashboard)
+1. To get started, go to the [metricminer-dashboard template GitHub repo](https://github.com/ottrproject/metricminer-dashboard)
 2. Click the green "Use this template" button in the upper right corner. If you do not see it, make sure you are logged in to GitHub (and have an account).
 3. Name your new metricminer dashboard repository on this screen. Then click "Create new repository".
 4. Create your GitHub secret by going to https://github.com/settings/tokens/new
@@ -160,12 +160,12 @@ In the `_config_automation.yml` you will need to specify items in the GitHub sec
 ```
 ###### GitHub ######
 refresh-github: yes
-github_repos: [ fhdsl/metricminer, fhdsl/metricminer.org ]
+github_repos: [ ottrproject/metricminer, ottrproject/metricminer.org ]
 github_googlesheet:
 ```
 
 - [ ] In the `_config_automation.yml` file, make sure that `refresh-github` is set to "yes".
-- [ ] In `github_repos` of your `_config_automation.yml`, specify the names of the repositories you'd like to collect data from in `github_repos`. Make sure it includes the `owner/repository` e.g. `fhdsl/metricminer` not just `metricminer`. Commas need to separate the repositories. Delete the example repositories we put there.
+- [ ] In `github_repos` of your `_config_automation.yml`, specify the names of the repositories you'd like to collect data from in `github_repos`. Make sure it includes the `owner/repository` e.g. `ottrproject/metricminer` not just `metricminer`. Commas need to separate the repositories. Delete the example repositories we put there.
 - [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `github_googlesheet` you'd like the GitHub data to be saved to. This will only be relevant if you've set `data_dest` to `google`.
 
 

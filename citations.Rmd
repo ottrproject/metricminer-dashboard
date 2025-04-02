@@ -69,6 +69,6 @@ citation_googlesheet:
 In order to customize the data you are downloading from Google Scholar you can modify the
 `refresh-scripts/refresh-citations.R` script in your repository.
 
-You can take a look at the [`metricminer` R package documentation](https://hutchdatascience.org/metricminer/articles/getting-started.html) for more details about the functions and what is possible.
+You can take a look at the [`metricminer` R package documentation](https://ottrproject.org/metricminer/articles/getting-started.html) for more details about the functions and what is possible.
 
-If you have a metric need that is not currently fulfilled by `metricminer` or `metricminer-dashboard` we encourage you to [file a GitHub issue with us and let us know about your new feature idea (or bug report)](https://github.com/fhdsl/metricminer/issues/new/choose).
+If you have a metric need that is not currently fulfilled by `metricminer` or `metricminer-dashboard` we encourage you to [file a GitHub issue with us and let us know about your new feature idea (or bug report)](https://github.com/ottrproject/metricminer/issues/new/choose).
