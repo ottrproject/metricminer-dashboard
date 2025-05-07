@@ -19,7 +19,7 @@ group:
         dest: .github/workflows/pull_request.yml
       - source: _config_automation.yml
         dest: _config_automation.yml
-  # Repositories to receive changes
+  # Repositories to receive sync changes
     repos: |
       opencasestudies/ocs-metrics-dashboard
 ###ADD NEW REPO HERE following the format above#
