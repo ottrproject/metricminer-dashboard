@@ -384,7 +384,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">GitHub</h1>
-<h4 class="date">13 March, 2025</h4>
+<h4 class="date">07 May, 2025</h4>
 
 </div>
 
@@ -394,7 +394,7 @@ div.tocify {
 <p>Contributions to a repository example:</p>
 <p><img src="github_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Views of a GitHub Repository over time</p>
-<pre><code>## Warning: Removed 5 rows containing missing values or values outside the scale range
+<pre><code>## Warning: Removed 10 rows containing missing values or values outside the scale range
 ## (`geom_line()`).</code></pre>
 <p><img src="github_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
@@ -478,27 +478,27 @@ have?</li>
 <td align="right">NA</td>
 </tr>
 <tr class="odd">
-<td align="left">NA</td>
+<td align="left">fhdsl/metricminer</td>
 <td align="right">NA</td>
 <td align="right">5</td>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">100</td>
-<td align="right">582</td>
-<td align="right">486</td>
+<td align="right">590</td>
+<td align="right">489</td>
 </tr>
 <tr class="even">
-<td align="left">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
 <td align="right">NA</td>
-<td align="right">4</td>
+<td align="right">5</td>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">62</td>
-<td align="right">503</td>
-<td align="right">216</td>
+<td align="right">521</td>
+<td align="right">229</td>
 </tr>
 <tr class="odd">
-<td align="left">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
 <td align="right">14</td>
 <td align="right">19</td>
 <td align="right">NA</td>
@@ -508,7 +508,7 @@ have?</li>
 <td align="right">1006</td>
 </tr>
 <tr class="even">
-<td align="left">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
 <td align="right">3</td>
 <td align="right">8</td>
 <td align="right">NA</td>
@@ -516,6 +516,56 @@ have?</li>
 <td align="right">50</td>
 <td align="right">414</td>
 <td align="right">302</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+<td align="right">100</td>
+<td align="right">595</td>
+<td align="right">489</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">62</td>
+<td align="right">526</td>
+<td align="right">234</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="right">14</td>
+<td align="right">19</td>
+<td align="right">NA</td>
+<td align="right">17</td>
+<td align="right">75</td>
+<td align="right">1569</td>
+<td align="right">1006</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+<td align="right">100</td>
+<td align="right">604</td>
+<td align="right">502</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">62</td>
+<td align="right">527</td>
+<td align="right">235</td>
 </tr>
 </tbody>
 </table>
@@ -533,14 +583,15 @@ day? NAs generally indicate no one viewed the repository that date</li>
 generally indicate no one viewed the repository that date</li>
 </ul>
 <pre class="r"><code>knitr::kable(github_timecourse)</code></pre>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="30%" />
-<col width="11%" />
-<col width="13%" />
-<col width="15%" />
+<col width="23%" />
+<col width="8%" />
+<col width="10%" />
 <col width="12%" />
-<col width="14%" />
+<col width="9%" />
+<col width="11%" />
+<col width="23%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -550,6 +601,7 @@ generally indicate no one viewed the repository that date</li>
 <th align="right">uniques_clones</th>
 <th align="right">count_views</th>
 <th align="right">uniques_views</th>
+<th align="left">repo_name</th>
 </tr>
 </thead>
 <tbody>
@@ -560,6 +612,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -568,6 +621,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -576,6 +630,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">6</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -584,6 +639,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -592,6 +648,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -600,6 +657,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -608,6 +666,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -616,6 +675,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -624,6 +684,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -632,6 +693,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -640,6 +702,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -648,6 +711,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -656,6 +720,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">9</td>
 <td align="right">3</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -664,6 +729,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -672,6 +738,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -680,6 +747,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -688,6 +756,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -696,6 +765,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -704,6 +774,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">35</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -712,6 +783,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">3</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -720,6 +792,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">7</td>
 <td align="right">12</td>
 <td align="right">4</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -728,6 +801,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">3</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -736,6 +810,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -744,6 +819,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">33</td>
 <td align="right">5</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -752,6 +828,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">4</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -760,6 +837,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">9</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -768,6 +846,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -776,6 +855,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -784,6 +864,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">53</td>
 <td align="right">4</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -792,6 +873,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -800,6 +882,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -808,6 +891,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -816,6 +900,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -824,6 +909,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">11</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -832,6 +918,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -840,6 +927,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">8</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -848,6 +936,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -856,6 +945,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">10</td>
 <td align="right">19</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -864,6 +954,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">15</td>
 <td align="right">35</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -872,6 +963,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">7</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -880,6 +972,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">4</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -888,6 +981,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -896,6 +990,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -904,6 +999,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">14</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -912,6 +1008,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -920,6 +1017,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -928,6 +1026,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -936,6 +1035,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">9</td>
 <td align="right">35</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -944,6 +1044,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -952,6 +1053,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -960,6 +1062,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -968,6 +1071,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -976,6 +1080,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -984,6 +1089,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -992,6 +1098,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">11</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1000,6 +1107,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">33</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1008,6 +1116,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">3</td>
 <td align="right">39</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1016,6 +1125,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">27</td>
 <td align="right">5</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1024,6 +1134,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1032,6 +1143,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1040,6 +1152,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1048,6 +1161,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">5</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1056,6 +1170,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1064,6 +1179,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">12</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1072,6 +1188,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1080,6 +1197,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">3</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1088,6 +1206,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">12</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1096,6 +1215,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1104,6 +1224,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1112,6 +1233,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1120,6 +1242,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1128,6 +1251,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">20</td>
 <td align="right">27</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -1136,6 +1260,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">6</td>
 <td align="right">12</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1144,6 +1269,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">6</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -1152,6 +1278,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">15</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1160,6 +1287,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">10</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1168,6 +1296,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">2</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1176,6 +1305,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">6</td>
 <td align="right">8</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1184,6 +1314,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">24</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1192,6 +1323,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1200,6 +1332,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1208,6 +1341,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">10</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1216,6 +1350,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1224,6 +1359,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">13</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1232,6 +1368,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">2</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1240,6 +1377,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">3</td>
 <td align="right">11</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -1248,6 +1386,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">5</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1256,6 +1395,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1264,6 +1404,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">12</td>
 <td align="right">33</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1272,6 +1413,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">4</td>
 <td align="right">4</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -1280,6 +1422,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1288,6 +1431,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -1296,6 +1440,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1304,6 +1449,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1312,6 +1458,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">9</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1320,6 +1467,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">6</td>
 <td align="right">42</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1328,6 +1476,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1336,6 +1485,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1344,6 +1494,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">10</td>
 <td align="right">7</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1352,6 +1503,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1360,6 +1512,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1368,6 +1521,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">4</td>
 <td align="right">4</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1376,6 +1530,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">7</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1384,6 +1539,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">6</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1392,6 +1548,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1400,6 +1557,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1408,6 +1566,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1416,6 +1575,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">3</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1424,6 +1584,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1432,6 +1593,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer</td>
@@ -1440,6 +1602,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer</td>
@@ -1448,6 +1611,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1456,6 +1620,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1464,6 +1629,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">8</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1472,6 +1638,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">fhdsl/metricminer-dashboard</td>
@@ -1480,6 +1647,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1488,6 +1656,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1496,6 +1665,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">3</td>
 <td align="right">11</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1504,6 +1674,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">3</td>
 <td align="right">22</td>
 <td align="right">3</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1512,6 +1683,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">2</td>
 <td align="right">4</td>
 <td align="right">4</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1520,6 +1692,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1528,6 +1701,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">3</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template</td>
@@ -1536,6 +1710,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1544,6 +1719,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">1</td>
 <td align="right">2</td>
 <td align="right">1</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1552,6 +1728,7 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">2</td>
 <td align="right">2</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">jhudsl/OTTR_Template_Website</td>
@@ -1560,6 +1737,691 @@ generally indicate no one viewed the repository that date</li>
 <td align="right">NA</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-08</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-09</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-11</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-12</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-13</td>
+<td align="right">23</td>
+<td align="right">7</td>
+<td align="right">34</td>
+<td align="right">2</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-14</td>
+<td align="right">27</td>
+<td align="right">3</td>
+<td align="right">23</td>
+<td align="right">4</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-15</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-03</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-05</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-02</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-03</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-07</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-09</td>
+<td align="right">14</td>
+<td align="right">7</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-10</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-12</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-13</td>
+<td align="right">26</td>
+<td align="right">10</td>
+<td align="right">34</td>
+<td align="right">2</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-14</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-15</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-03</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-04</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">11</td>
+<td align="right">3</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-05</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">22</td>
+<td align="right">3</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-06</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-07</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-08</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-09</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-10</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-11</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-12</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-14</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-02</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-13</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-15</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-05</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-09</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-10</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-11</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-12</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-15</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-04</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-06</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-13</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-20</td>
+<td align="right">18</td>
+<td align="right">3</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-21</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-22</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-17</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-18</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-19</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-16</td>
+<td align="right">18</td>
+<td align="right">8</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-17</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-18</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-20</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-22</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-19</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-09</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-16</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-17</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-18</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-19</td>
+<td align="right">8</td>
+<td align="right">3</td>
+<td align="right">27</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-21</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-22</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">2025-03-20</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-25</td>
+<td align="right">52</td>
+<td align="right">6</td>
+<td align="right">33</td>
+<td align="right">3</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-26</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-29</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-24</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer</td>
+<td align="left">2025-03-28</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">fhdsl/metricminer</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-23</td>
+<td align="right">9</td>
+<td align="right">3</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-25</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="odd">
+<td align="left">fhdsl/metricminer-dashboard</td>
+<td align="left">2025-03-29</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">fhdsl/metricminer-dashboard</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-23</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-25</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-26</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-27</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-29</td>
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="odd">
+<td align="left">jhudsl/OTTR_Template</td>
+<td align="left">2025-03-24</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">jhudsl/OTTR_Template</td>
+</tr>
+<tr class="even">
+<td align="left">jhudsl/OTTR_Template_Website</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">jhudsl/OTTR_Template_Website</td>
 </tr>
 </tbody>
 </table>
