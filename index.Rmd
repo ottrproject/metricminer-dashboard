@@ -8,7 +8,7 @@ output:
 
 ## Setting up your dashboard repository
 
-1. To get started, go to the [metricminer-dashboard template GitHub repo](https://github.com/fhdsl/metricminer-dashboard)
+1. To get started, go to the [metricminer-dashboard template GitHub repo](https://github.com/ottrproject/metricminer-dashboard)
 2. Click the green "Use this template" button in the upper right corner. If you do not see it, make sure you are logged in to GitHub (and have an account).
 3. Name your new metricminer dashboard repository on this screen. Then click "Create new repository".
 4. Create your GitHub secret by going to https://github.com/settings/tokens/new
@@ -75,7 +75,7 @@ If in your config file you choose "google" as your data destination you will nee
 
 ### Setting up Google Authentication
 
-Your metricminer dashboard will need permissions to Google if you are saving data there, or wanting to use any data from a Google product including: Google Analytics, Google Forms, Googledrive, or Youtube. 
+Your metricminer dashboard will need permissions to Google if you are saving data there, or wanting to use any data from a Google product including: Google Analytics, Google Forms, Googledrive (e.g., stored slido data), or Youtube. 
 
 To setup Google Authentication for your metricminer dashboard, you'll need to open up R on your local computer and run the following code:
 If you aren't a regular R user you can always use [posit.cloud](https://posit.cloud/) to avoid the installation process. 
