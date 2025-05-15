@@ -32,6 +32,7 @@ jobs:
       toggle_googleforms: "${{ env.REFRESH_GOOGLEFORMS }}"
       toggle_slido: "${{ env.REFRESH_SLIDO }}"
       toggle_youtube: "${{ env.REFRESH_YOUTUBE }}"
+      data_image: "${{ env.DATA_IMAGE }}"
       rendering_docker_image: "${{ env.RENDERING_DOCKER_IMAGE }}"
       ### Inputs ###
       cran_packages: "${{ env.CRAN_PACKAGES }}"
@@ -46,7 +47,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_calendly == 'yes'}}
 
     steps:
@@ -80,7 +81,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_cran == 'yes'}}
 
     steps:
@@ -111,7 +112,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_citations == 'yes'}}
 
     steps:
@@ -142,7 +143,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_ga == 'yes'}}
 
     steps:
@@ -176,7 +177,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_github == 'yes'}}
 
     steps:
@@ -207,7 +208,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_googleforms == 'yes'}}
 
     steps:
@@ -239,7 +240,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_slido == 'yes'}}
 
     steps:
@@ -271,7 +272,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
+      image: ${{needs.yaml-check.outputs.data_image}}
     if: ${{needs.yaml-check.outputs.toggle_youtube == 'yes'}}
 
     steps:
