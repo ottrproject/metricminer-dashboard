@@ -26,7 +26,7 @@ jobs:
       - name: Load environment from YAML
         uses: doughepi/yaml-env-action@v1.0.0
         with:
-            files: _config_automation.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
+            files: config_automation.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
     outputs:
       toggle_website: "${{ env.RENDER_WEBSITE }}"
       rendering_docker_image: "${{ env.RENDERING_DOCKER_IMAGE }}"
@@ -35,8 +35,6 @@ jobs:
     name: Render website
     needs: yaml-check
     runs-on: ubuntu-latest
-    container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
 
     steps:
       - name: checkout
@@ -52,3 +50,4 @@ jobs:
           toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
           preview: false
           token: ${{ secrets.GH_PAT }}
+          docker_image: ${{needs.yaml-check.outputs.rendering_docker_image}}
