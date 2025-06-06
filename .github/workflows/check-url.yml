@@ -19,7 +19,7 @@ jobs:
       - name: Load environment from YAML
         uses: doughepi/yaml-env-action@v1.0.0
         with:
-            files: _config_automation.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
+            files: config_automation.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
     outputs:
       toggle_url_check_periodically: "${{ env.URL_CHECK_PERIODICALLY }}"
 
@@ -80,7 +80,7 @@ jobs:
         echo ${{ steps.check-report.outputs.error_num }}
 
       # Commit file
-    - name: Commit tocless bookdown files
+    - name: Commit spell check file
       if: ${{ steps.check-report.outputs.error_num >= 1 }}
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
