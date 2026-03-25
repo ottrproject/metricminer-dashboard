@@ -27,7 +27,7 @@ auth_from_secret("github", token = Sys.getenv("METRICMINER_GITHUB_PAT"))
 
 # Read the data
 gh_metrics <- get_multiple_repos_metrics(repo_names = yaml$github_repos) %>% 
-                mutate(current_date = today())
+                dplyr::mutate(current_date = today())
 gh_timecourse <- get_multiple_repos_metrics(repo_names = yaml$github_repos, time_course = TRUE) %>%
                 dplyr::mutate(current_date = today())
 
