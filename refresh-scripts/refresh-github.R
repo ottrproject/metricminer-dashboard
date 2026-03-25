@@ -29,7 +29,7 @@ auth_from_secret("github", token = Sys.getenv("METRICMINER_GITHUB_PAT"))
 gh_metrics <- get_multiple_repos_metrics(repo_names = yaml$github_repos) %>% 
                 mutate(current_date = today())
 gh_timecourse <- get_multiple_repos_metrics(repo_names = yaml$github_repos, time_course = TRUE) %>%
-                mutate(current_date = today())
+                dplyr::mutate(current_date = today())
 
 setup_folders(
   folder_path = folder_path,
