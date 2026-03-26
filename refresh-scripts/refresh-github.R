@@ -62,7 +62,7 @@ if (yaml$data_dest == "github") {
     dplyr::filter(repo %in% yaml$github_repos)
 
   dplyr::bind_rows(old_gh_metrics, gh_metrics) %>% 
-    dplyr::distinct(select(., -current_date), .keep_all =  TRUE) %>% 
+    dplyr::distinct(select(., -current_date), .keep_all =  TRUE) %>%  #using .keep_all = TRUE to keep the current_date column in the output
     readr::write_tsv(file.path(folder_path, "github.tsv"))
   
   dplyr::bind_rows(old_gh_timecourse, gh_timecourse) %>% 
