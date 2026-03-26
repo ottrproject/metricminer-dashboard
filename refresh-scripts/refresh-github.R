@@ -4,6 +4,7 @@
 
 library(metricminer)
 library(magrittr)
+library(lubridate)
 
 # Find .git root directory
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
@@ -25,8 +26,10 @@ auth_from_secret("google",
 auth_from_secret("github", token = Sys.getenv("METRICMINER_GITHUB_PAT"))
 
 # Read the data
-gh_metrics <- get_multiple_repos_metrics(repo_names = yaml$github_repos)
-gh_timecourse <- get_multiple_repos_metrics(repo_names = yaml$github_repos, time_course = TRUE)
+gh_metrics <- get_multiple_repos_metrics(repo_names = yaml$github_repos) %>% 
+                dplyr::mutate(current_date = today())
+gh_timecourse <- get_multiple_repos_metrics(repo_names = yaml$github_repos, time_course = TRUE) %>%
+                dplyr::mutate(current_date = today())
 
 setup_folders(
   folder_path = folder_path,
@@ -59,11 +62,11 @@ if (yaml$data_dest == "github") {
     dplyr::filter(repo %in% yaml$github_repos)
 
   dplyr::bind_rows(old_gh_metrics, gh_metrics) %>% 
-    dplyr::distinct() %>% 
+    dplyr::distinct(select(., -current_date), .keep_all =  TRUE) %>%  #using .keep_all = TRUE to keep the current_date column in the output
     readr::write_tsv(file.path(folder_path, "github.tsv"))
   
   dplyr::bind_rows(old_gh_timecourse, gh_timecourse) %>% 
-    dplyr::distinct() %>% 
+    dplyr::distinct(select(., -current_date), .keep_all = TRUE) %>% 
     readr::write_tsv(file.path(folder_path, "github_timecourse.tsv"))
 }
 
