@@ -75,7 +75,7 @@ If in your config file you choose "google" as your data destination you will nee
 
 ### Setting up Google Authentication
 
-Your metricminer dashboard will need permissions to Google if you are saving data there, or wanting to use any data from a Google product including: Google Analytics, Google Forms, Googledrive, or Youtube. 
+Your metricminer dashboard will need permissions to Google if you are saving data there, or wanting to use any data from a Google product including: Google Analytics, Google Forms, Google Drive, or YouTube. 
 
 To setup Google Authentication for your metricminer dashboard, you'll need to open up R on your local computer and run the following code:
 If you aren't a regular R user you can always use [posit.cloud](https://posit.cloud/) to avoid the installation process. 
@@ -99,6 +99,157 @@ Repeat the same steps for the Refresh token except call this `METRICMINER_GOOGLE
 ```
 token$credentials$refresh_token
 ```
+
+### Setting up Calendly
+
+To set up Calendly authorization, [go to the Calendly API and webhooks integrations page](https://calendly.com/integrations/api_webhooks) and click "Generate Token".
+
+Underneath "Choose a name for this token", pick a name that will remind you of this project. Click "Create Token" and Calendly will send you an authorization code to your email. After you enter that authorization code, click "Copy Token" and keep this handy.
+
+Then, return to your metricminer dashboard repository and go to `Settings` > `Secrets and variables` > `Actions`.
+- Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_CALENDLY`
+- Paste your token into the `Secret` box and then click the green "Add secret" button.
+
+After you've set up authorization you'll need to check the following items in the `_config_automation.yml` file.
+
+```
+###### Calendly ######
+refresh-calendly: yes
+calendly_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-calendly` is set to "yes".
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `calendly_googlesheet` where you'd like the Calendly data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up CRAN
+
+In the `_config_automation.yml` file you will need to specify the CRAN packages that you would like metricminer to collect data from.
+
+```
+###### CRAN ######
+refresh-cran: yes
+cran_packages: [ metricminer, ottrpal ]
+cran_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-cran` is set to "yes".
+- [ ] In `cran_packages`, type the names of the packages that you'd like to collect data from on CRAN. Type them exactly as they are spelled, case sensitive, separated by commas. Delete the example package names we've put there.
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `cran_googlesheet` where you'd like the CRAN data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up GitHub
+
+At this point you should already have your GitHub authorization set up for your metricminer dashboard by having [followed the instructions above](#setting-up-your-dashboard-repository).
+
+In the `_config_automation.yml` file you will need to specify which GitHub repositories you would like metricminer to collect data from.
+
+```
+###### GitHub ######
+refresh-github: yes
+github_repos: [ fhdsl/metricminer, fhdsl/metricminer.org ]
+github_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-github` is set to "yes".
+- [ ] In `github_repos`, specify the names of the repositories you'd like to collect data from. Make sure each one includes the `owner/repository`, for example `fhdsl/metricminer`, not just `metricminer`. Separate repositories with commas. Delete the example repositories we've put there.
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `github_googlesheet` where you'd like the GitHub data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up Google Analytics
+
+[Follow the steps from the above section to authenticate Google](#setting-up-google-authentication) and make sure that the account you have authenticated has access to the Google Analytics properties you wish to collect.
+
+You'll need to collect the Google Analytics property IDs for the websites you want to retrieve data from.
+
+1. Go to https://analytics.google.com/ -- You may have to login. These instructions are assuming you have already set up Google Analytics and have been collecting data.
+2. Click on the website at the top of the navbar. It will bring you to a dropdown that shows all your websites.
+3. Click on one of the websites where you'd like to retrieve data from. The URL will look something like this:
+
+```
+https://analytics.google.com/analytics/web/?authuser=1#/p<PROPERTY_ID_HERE>/reports/home
+```
+
+Copy the property ID and put it in the `ga_property_ids` part of the `_config_automation.yml` file. Repeat these same steps for all the properties you'd like to collect data for, separating the IDs by commas. Delete the example IDs we have put there as placeholders.
+
+```
+###### Google Analytics ######
+refresh-ga: yes
+ga_property_ids: [ 422671031, 422558989 ]
+ga_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-ga` is set to "yes".
+- [ ] In `ga_property_ids`, specify the Google Analytics property IDs for the websites you'd like to collect data from. Separate property IDs with commas. Delete the example IDs we've put there.
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `ga_googlesheet` where you'd like the Google Analytics data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up Google Forms
+
+[Follow the steps from the above section to authenticate Google](#setting-up-google-authentication) and make sure that the account you have authenticated has access to the Google Forms you wish to collect.
+
+Go to a form you'd like to collect data from. The URL should look something like this:
+
+```
+https://docs.google.com/forms/u/1/d/<GOOGLE_FORM_ID_HERE>/edit?usp=drive_web
+```
+
+Extract the Google Form ID from the URL and put it in the `google_forms` section of the `_config_automation.yml` file. Do this for each form you'd like to collect data from and separate the form IDs with commas. Delete the example IDs we have put there as placeholders.
+
+```
+###### Google Forms ######
+refresh-googleforms: yes
+google_forms: [
+  1pbFfgUPYH2w9zEoCDjCa4HFOxzEhGOseufw28Xxmd-o,
+  1JjmsiuVoGSxvl-1M_oWittcftO955tijzeNc-cgJlo8 ]
+googleforms_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-googleforms` is set to "yes".
+- [ ] In `google_forms`, specify the Google Form IDs for the forms you'd like to collect data from. Separate form IDs with commas. Delete the example IDs we've put there.
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `googleforms_googlesheet` where you'd like the Google Forms data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up Slido
+
+This is assuming you have already exported Slido data to a Google Drive folder. See the [Slido export instructions](https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532) for how to do that.
+
+Navigate to the Google Drive folder that has the Slido data you'd like to collect. Get the URL for this folder. It should look like this:
+
+```
+https://drive.google.com/drive/u/1/folders/<SOME_FOLDER_ID_HERE>
+```
+
+Put the folder ID from this URL in the `drive_id` category in the `_config_automation.yml` file.
+
+```
+###### Slido ######
+refresh-slido: yes
+drive_id: 1XWXHHyj32Uw_UyaUJrqp6S--hHnM0-7l
+slido_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-slido` is set to "yes".
+- [ ] In `drive_id`, specify the Google Drive folder ID where your exported Slido data are saved. Delete the example folder ID we've put there.
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `slido_googlesheet` where you'd like the Slido data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up YouTube
+
+[Follow the steps from the above section to authenticate Google](#setting-up-google-authentication) and make sure that the account you have authenticated has access to the YouTube videos you wish to collect.
+
+Go to a video you'd like to collect data from. The URL should look something like this:
+
+```
+https://www.youtube.com/watch?v=<YOUTUBE_VIDEO_ID_HERE>
+```
+
+Extract the YouTube Video ID from the URL and put it in the `video_ids` section of the `_config_automation.yml` file. Do this for each video you'd like to collect data from and separate the IDs with commas. Delete the example IDs we have put there as placeholders.
+
+```
+###### YouTube ######
+refresh-youtube: yes
+video_ids: [ XN_QPRrJZAw, YkYnni-WuaQ ]
+youtube_googlesheet:
+```
+
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-youtube` is set to "yes".
+- [ ] In `video_ids`, specify the YouTube Video IDs for the videos you'd like to collect data from. Separate video IDs with commas. Delete the example IDs we've put there.
+- [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `youtube_googlesheet` where you'd like the YouTube data to be saved. This will only be relevant if you've set `data_dest` to `google`.
 
 ---
 This work is funded by NCI UE5CA254170 as a part of the [ITCR Training Network](https://www.itcrtraining.org/)
