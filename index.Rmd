@@ -14,7 +14,7 @@ output:
 4. Create your GitHub secret by going to https://github.com/settings/tokens/new
 5. Make sure your GitHub secret has the `repo` and `workflow` scopes box checked. Name it something that will remind you it has to do with your metricminer dashboard and then scroll to the bottom and click "Generate Token". Keep this page open for now.
 6. Return to your metricminer dashboard repository and go to Settings > Secrets and variables > Actions.
-7. Click on `New repository secret`. Name your new secret *exactly* `GH_PAT`
+7. Click on `New repository secret`. Name your new secret *exactly* `GH_PAT`. OTTR uses this secret for general website tasks, including checks and rendering.
 8. Copy and paste your Personal access token in the `Secret` box and then click the green "Add secret" button.
 
 
@@ -138,7 +138,12 @@ cran_googlesheet:
 
 ### Setting up GitHub
 
-At this point you should already have your GitHub authorization set up for your metricminer dashboard by having [followed the instructions above](#setting-up-your-dashboard-repository).
+1. Create your GitHub secret by going to https://github.com/settings/tokens/new
+2. Make sure your GitHub secret has the `repo` and `workflow` scopes box checked. Name it something that will remind you it has to do with your metricminer dashboard Github data and then scroll to the bottom and click "Generate Token". Keep this page open for now.
+3. Return to your metricminer dashboard repository and go to Settings > Secrets and variables > Actions.
+4. Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_GITHUB_PAT`. OTTR uses this secret for general website tasks, including checks and rendering.
+5. Copy and paste your Personal access token in the `Secret` box and then click the green "Add secret" button.
+metricminer uses this secret when collecting data from GitHub repositories.
 
 In the `_config_automation.yml` file you will need to specify which GitHub repositories you would like metricminer to collect data from.
 
