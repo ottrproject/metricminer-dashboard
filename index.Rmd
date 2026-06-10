@@ -110,6 +110,8 @@ Then, return to your metricminer dashboard repository and go to `Settings` > `Se
 - Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_CALENDLY`
 - Paste your token into the `Secret` box and then click the green "Add secret" button.
 
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, or Calendly meeting notes. Review your data before sharing or publishing it.
+
 After you've set up authorization you'll need to check the following items in the `_config_automation.yml` file.
 
 ```
@@ -120,6 +122,25 @@ calendly_googlesheet:
 
 - [ ] In the `_config_automation.yml` file, make sure that `refresh-calendly` is set to "yes".
 - [ ] Optionally, if you are saving data to Google, specify a googlesheet ID in `calendly_googlesheet` where you'd like the Calendly data to be saved. This will only be relevant if you've set `data_dest` to `google`.
+
+### Setting up Citations
+
+1. Go to: https://scholar.google.com/scholar
+2. Search for the paper you are looking for the citation count.
+3. Then click the `Cited by ___` button below the title of the paper
+4. Copy and paste this in the `_config_automation.yml` file in the `citation_papers` section.
+
+```
+###### Citations ######
+refresh-citations: yes
+citation_papers: [
+  "https://scholar.google.com/scholar?cites=6140457238337460780",
+  "https://scholar.google.com/scholar?cites=15945159957067506879" ]
+citation_googlesheet:
+```
+- [ ] In the `_config_automation.yml` file, make sure that `refresh-citations` is set to "yes".
+- [ ] Optionally, if you are saving data to google, specify a googlesheet ID in `citation_googlesheet` if you'd like the citation data to be saved to. This will only be relevant if you've set `data_dest` to `google`.
+
 
 ### Setting up CRAN
 
@@ -215,6 +236,8 @@ googleforms_googlesheet:
 This is assuming you have already exported Slido data to a Google Drive folder. See the [Slido export instructions](https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532) for how to do that.
 
 Navigate to the Google Drive folder that has the Slido data you'd like to collect. Get the URL for this folder. It should look like this:
+
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, Slido questions, or meeting notes. Review your data before sharing or publishing it.
 
 ```
 https://drive.google.com/drive/u/1/folders/<SOME_FOLDER_ID_HERE>
