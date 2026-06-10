@@ -25,6 +25,8 @@ questions <- readr::read_tsv(file.path("metricminer_data", "slido", "Questions.t
 
 This is assuming you have already exported Slido data to a google drive folder. See [Slido instructions here](https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532) for how to do that. Navigate to the Google Drive folder that has the Slidos you'd like to collect. Get the URL for this folder. It should look like this:
 
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, Slido questions, or meeting notes. Review your data before sharing or publishing it.
+
 ```
 https://drive.google.com/drive/u/1/folders/<SOME_FOLDER_ID_HERE>
 ```

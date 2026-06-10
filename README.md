@@ -108,6 +108,8 @@ token$credentials$refresh_token
 6. Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_CALENDLY`
 7. Paste your token into the `Secret` box and then click the green "Add secret" button.
 
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, or Calendly meeting notes. Review your data before sharing or publishing it.
+
 After you've set up authorization you'll need to check the following items in the `_config_automation.yml` file.
 
 - [ ] In the `_config_automation.yml` file, make sure that `refresh-calendly` is set to "yes".
@@ -224,6 +226,8 @@ googleforms_googlesheet:
 ### Setting up Slido
 
 This is assuming you have already exported Slido data to a google drive folder. See [Slido instructions here](https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532) for how to do that. Navigate to the Google Drive folder that has the Slidos you'd like to collect. Get the URL for this folder. It should look like this:
+
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, Slido questions, or meeting notes. Review your data before sharing or publishing it.
 
 ```
 https://drive.google.com/drive/u/1/folders/<SOME_FOLDER_ID_HERE>
