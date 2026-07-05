@@ -1,0 +1,15 @@
+By default there are two destinations you can save your data for metricminer, although if you change the code yourself you can save the data wherever you like.
+Built in to metricminer-dashboard, you have GitHub and Google as your data destination options.
+
+By default your data is saved to GitHub. This is only appropriate for small amounts of data. You could use git-lfs, but we find it can be a bit of a hassle.
+
+```
+### Options are "github" or "google"
+data_dest: github
+folder_path:
+```
+
+If in your config file you choose "google" as your data destination, you will need to do two things:
+
+1. Set up your Google Authentication secrets in this repository.
+2. Give a folder path to your Google Drive where you'd like your data to be saved.

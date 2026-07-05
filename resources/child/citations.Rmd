@@ -1,0 +1,25 @@
+1. Go to https://scholar.google.com/scholar
+2. Search for the paper you are looking for the citation count.
+3. Click the `Cited by ___` button below the title of the paper.
+4. Copy and paste this in the `_config_automation.yml` file in the `citation_papers` section.
+
+```
+###### Citations ######
+refresh-citations: yes
+citation_papers: [
+  "https://scholar.google.com/scholar?cites=6140457238337460780",
+  "https://scholar.google.com/scholar?cites=15945159957067506879" ]
+citation_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-citations`"
+setup_googlesheet_field <- "`citation_googlesheet`"
+setup_google_sheet_destination <- "if you'd like the citation data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+```{r child='google-sheet-destination-option.Rmd'}
+```

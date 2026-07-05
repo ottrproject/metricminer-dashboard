@@ -1,0 +1,15 @@
+metricminer dashboard is an OTTR website with additional metric collecting functionality powered by metricminer.
+[You can read more details about how to update your metricminer/OTTR website here](https://www.ottrproject.org/editing_website.html). If you are not familiar with pull requests, we recommend you go read those OTTR docs first.
+
+At the top of the config file you will see a listing of the checks that are run upon filing a pull request. If at any time you don't want these checks to be run you can set them to `no` and GitHub Actions will not run them.
+
+```
+# Check that urls in the content are not broken
+url-checker: yes
+# Render preview of content with changes (Rmd's and md's are checked)
+render-preview: yes
+# Spell check Rmds and quizzes
+spell-check: yes
+# Style any R code
+style-code: yes
+```

@@ -1,0 +1,37 @@
+```{r, include=FALSE}
+setup_google_access_target <- "the Google Forms"
+```
+
+```{r child='google-authentication-reference.Rmd'}
+```
+
+Go to a form you'd like to collect data from. The URL should look something like this:
+
+```
+https://docs.google.com/forms/u/1/d/<GOOGLE_FORM_ID_HERE>/edit?usp=drive_web
+```
+
+Extract the Google Form ID from the URL and put it in the `google_forms` section of the `_config_automation.yml` file. Do this for each form you'd like to collect data from and separate the form IDs with commas. Delete the example IDs we have put there as placeholders.
+
+```
+###### Google Forms ######
+refresh-googleforms: yes
+google_forms: [
+  1pbFfgUPYH2w9zEoCDjCa4HFOxzEhGOseufw28Xxmd-o,
+  1JjmsiuVoGSxvl-1M_oWittcftO955tijzeNc-cgJlo8 ]
+googleforms_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-googleforms`"
+setup_googlesheet_field <- "`googleforms_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the Google Forms data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+- [ ] In `google_forms`, specify the Google Form IDs for the forms you'd like to collect data from. Separate form IDs with commas. Delete the example IDs we've put there.
+
+```{r child='google-sheet-destination-option.Rmd'}
+```

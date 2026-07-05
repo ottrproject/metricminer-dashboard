@@ -1,0 +1,30 @@
+To set up Calendly authorization, [go to the Calendly API and webhooks integrations page](https://calendly.com/integrations/api_webhooks) and click "Generate Token".
+
+Underneath "Choose a name for this token", pick a name that will remind you of this project. Click "Create Token" and Calendly will send you an authorization code to your email. After you enter that authorization code, click "Copy Token" and keep this handy.
+
+Then, return to your metricminer dashboard repository and go to `Settings` > `Secrets and variables` > `Actions`.
+
+- Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_CALENDLY`
+- Paste your token into the `Secret` box and then click the green "Add secret" button.
+
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, or Calendly meeting notes. Review your data before sharing or publishing it.
+
+After you've set up authorization you'll need to check the following items in the `_config_automation.yml` file.
+
+```
+###### Calendly ######
+refresh-calendly: yes
+calendly_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-calendly`"
+setup_googlesheet_field <- "`calendly_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the Calendly data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+```{r child='google-sheet-destination-option.Rmd'}
+```

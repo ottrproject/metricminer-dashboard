@@ -1,0 +1,30 @@
+1. Create your GitHub secret by going to https://github.com/settings/tokens/new
+2. Make sure your GitHub secret has the `repo` and `workflow` scopes checked. Name it something that will remind you it has to do with your metricminer dashboard GitHub data, scroll to the bottom, and click "Generate Token". Keep this page open for now.
+3. Return to your metricminer dashboard repository and go to Settings > Secrets and variables > Actions.
+4. Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_GITHUB_PAT`.
+5. Copy and paste your personal access token in the `Secret` box and then click the green "Add secret" button.
+
+metricminer uses this secret when collecting data from GitHub repositories.
+
+In the `_config_automation.yml` file you will need to specify which GitHub repositories you would like metricminer to collect data from.
+
+```
+###### GitHub ######
+refresh-github: yes
+github_repos: [ fhdsl/metricminer, fhdsl/metricminer.org ]
+github_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-github`"
+setup_googlesheet_field <- "`github_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the GitHub data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+- [ ] In `github_repos`, specify the names of the repositories you'd like to collect data from. Make sure each one includes the `owner/repository`, for example `fhdsl/metricminer`, not just `metricminer`. Separate repositories with commas. Delete the example repositories we've put there.
+
+```{r child='google-sheet-destination-option.Rmd'}
+```

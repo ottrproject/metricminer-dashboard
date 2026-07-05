@@ -1,0 +1,1 @@
+[Follow the steps from the Google authentication section](#setting-up-google-authentication) and make sure that the account you have authenticated has access to `r setup_google_access_target` you wish to collect.

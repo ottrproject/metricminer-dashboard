@@ -1,0 +1,32 @@
+This is assuming you have already exported Slido data to a Google Drive folder. See the [Slido export instructions](https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532) for how to do that.
+
+Navigate to the Google Drive folder that has the Slido data you'd like to collect. Get the URL for this folder. It should look like this:
+
+**Important:** metricminer does not remove or redact identifying information that may be included in the data you collect, such as names, email addresses, Slido questions, or meeting notes. Review your data before sharing or publishing it.
+
+```
+https://drive.google.com/drive/u/1/folders/<SOME_FOLDER_ID_HERE>
+```
+
+Put the folder ID from this URL in the `drive_id` category in the `_config_automation.yml` file.
+
+```
+###### Slido ######
+refresh-slido: yes
+drive_id: 1XWXHHyj32Uw_UyaUJrqp6S--hHnM0-7l
+slido_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-slido`"
+setup_googlesheet_field <- "`slido_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the Slido data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+- [ ] In `drive_id`, specify the Google Drive folder ID where your exported Slido data are saved. Delete the example folder ID we've put there.
+
+```{r child='google-sheet-destination-option.Rmd'}
+```

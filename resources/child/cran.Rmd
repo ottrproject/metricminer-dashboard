@@ -1,0 +1,22 @@
+In the `_config_automation.yml` file you will need to specify the CRAN packages that you would like metricminer to collect data from.
+
+```
+###### CRAN ######
+refresh-cran: yes
+cran_packages: [ metricminer, ottrpal ]
+cran_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-cran`"
+setup_googlesheet_field <- "`cran_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the CRAN data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+- [ ] In `cran_packages`, type the names of the packages that you'd like to collect data from on CRAN. Type them exactly as they are spelled, case sensitive, separated by commas. Delete the example package names we've put there.
+
+```{r child='google-sheet-destination-option.Rmd'}
+```
