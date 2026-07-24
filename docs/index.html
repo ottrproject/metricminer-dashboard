@@ -13,7 +13,7 @@
 
 <title>metricminer</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -32,8 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="resources/images/favicon.ico" />
  <!--- go to https://favicon.io/favicon-converter/ to upload an image to make a new favicon.io. You will need to replace the current favicon.io image with the one in the downloaded directory from the website. The current image is in the resources/images/ directory --->
 
@@ -289,6 +289,20 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
+  <a href="googleforms.html">
+    <span class="fa fa-wpforms"></span>
+     
+    Google Forms
+  </a>
+</li>
+<li>
+  <a href="slido.html">
+    <span class="a a-square-poll-vertical"></span>
+     
+    Slido
+  </a>
+</li>
+<li>
   <a href="youtube.html">
     <span class="fa fa-play"></span>
      
@@ -313,29 +327,31 @@ $(document).ready(function () {
 
 
 <p><img src = "resources/images/metricminer-gnome.png" width = 200></p>
+<!-- Setup instructions are sourced from resources/child/. Edit those child Rmds to update every page that includes them. -->
 <div id="setting-up-your-dashboard-repository" class="section level2">
 <h2>Setting up your dashboard repository</h2>
 <ol style="list-style-type: decimal">
 <li>To get started, go to the <a
-href="https://github.com/fhdsl/metricminer-dashboard">metricminer-dashboard
+href="https://github.com/ottrproject/metricminer-dashboard">metricminer-dashboard
 template GitHub repo</a></li>
 <li>Click the green “Use this template” button in the upper right
-corner. If you do not see it, make sure you are logged in to GitHub (and
-have an account).</li>
+corner. If you do not see it, make sure you are logged in to GitHub and
+have an account.</li>
 <li>Name your new metricminer dashboard repository on this screen. Then
 click “Create new repository”.</li>
 <li>Create your GitHub secret by going to <a
 href="https://github.com/settings/tokens/new"
 class="uri">https://github.com/settings/tokens/new</a></li>
-<li>Make sure your GitHub secret has the <code>repo</code> scopes box
-checked. Name it something that will remind you it has to do with your
-metricminer dashboard and then scroll to the bottom and click “Generate
-Token”. Keep this page open for now.</li>
+<li>Make sure your GitHub secret has the <code>repo</code> and
+<code>workflow</code> scopes checked. Name it something that will remind
+you it has to do with your metricminer dashboard, scroll to the bottom,
+and click “Generate Token”. Keep this page open for now.</li>
 <li>Return to your metricminer dashboard repository and go to Settings
 &gt; Secrets and variables &gt; Actions.</li>
 <li>Click on <code>New repository secret</code>. Name your new secret
-<em>exactly</em> <code>METRICMINER_GITHUB_PAT</code></li>
-<li>Copy and paste your Personal access token in the <code>Secret</code>
+<em>exactly</em> <code>GH_PAT</code>. OTTR uses this secret for general
+website tasks, including checks and rendering.</li>
+<li>Copy and paste your personal access token in the <code>Secret</code>
 box and then click the green “Add secret” button.</li>
 </ol>
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -354,6 +370,7 @@ saved</a></li>
 <li><a href="#setting-up-google-authentication">Setting up Google
 Authentication</a></li>
 <li><a href="#setting-up-calendly">Setting up Calendly</a></li>
+<li><a href="#setting-up-citations">Setting up Citations</a></li>
 <li><a href="#setting-up-cran">Setting up CRAN</a></li>
 <li><a href="#setting-up-github">Setting up GitHub</a></li>
 <li><a href="#setting-up-google-analytics">Setting up Google
@@ -367,10 +384,10 @@ Analytics</a></li>
 </div>
 <div id="setting-up-your-config-file" class="section level2">
 <h2>Setting up your config file</h2>
-<p>Return to the <code>Code</code> on your metricminer dashboard github
-repository. And find the <code>_config_automation.yml</code> github
-file. Open up that file and we will start setting up which metrics you’d
-like to be retrieved.</p>
+<p>Return to the <code>Code</code> on your metricminer dashboard GitHub
+repository and find the <code>_config_automation.yml</code> file. Open
+up that file and we will start setting up which metrics you’d like to
+retrieve.</p>
 <div id="overall-settings" class="section level3">
 <h3>Overall settings</h3>
 <p>metricminer dashboard is an OTTR website with additional metric
@@ -395,29 +412,31 @@ style-code: yes</code></pre>
 <div id="where-your-data-are-saved" class="section level3">
 <h3>Where your data are saved</h3>
 <p>By default there are two destinations you can save your data for
-metricminer (although if you change the code yourself you can feel free
-to save the data wherever you like). Built in to metricminer-dashboard
-however we have github and google as your options for a data
-destination.</p>
-<p>By default your data is saved to github. But this will only be
-appropriate for small amounts of data (you could use something called
-git-lfs but we find it can be a bit of a hassle).</p>
+metricminer, although if you change the code yourself you can save the
+data wherever you like. Built in to metricminer-dashboard, you have
+GitHub and Google as your data destination options.</p>
+<p>By default your data is saved to GitHub. This is only appropriate for
+small amounts of data. You could use git-lfs, but we find it can be a
+bit of a hassle.</p>
 <pre><code>### Options are &quot;github&quot; or &quot;google&quot;
 data_dest: github
 folder_path:</code></pre>
-<p>If in your config file you choose “google” as your data destination
-you will need to do two things: 1. Set up your Google Authentication
-secrets in this repository 2. Give a folder path to your Google drive
-where you’d like your data to be saved.</p>
+<p>If in your config file you choose “google” as your data destination,
+you will need to do two things:</p>
+<ol style="list-style-type: decimal">
+<li>Set up your Google Authentication secrets in this repository.</li>
+<li>Give a folder path to your Google Drive where you’d like your data
+to be saved.</li>
+</ol>
 </div>
 <div id="setting-up-google-authentication" class="section level3">
 <h3>Setting up Google Authentication</h3>
 <p>Your metricminer dashboard will need permissions to Google if you are
 saving data there, or wanting to use any data from a Google product
-including: Google Analytics, Google Forms, Googledrive, or Youtube.</p>
-<p>To setup Google Authentication for your metricminer dashboard, you’ll
-need to open up R on your local computer and run the following code: If
-you aren’t a regular R user you can always use <a
+including Google Analytics, Google Forms, Google Drive, or YouTube.</p>
+<p>To set up Google Authentication for your metricminer dashboard,
+you’ll need to open up R on your local computer and run the following
+code. If you aren’t a regular R user you can always use <a
 href="https://posit.cloud/">posit.cloud</a> to avoid the installation
 process.</p>
 <pre><code>install.packages(&quot;metricminer&quot;)
@@ -425,19 +444,296 @@ library(&quot;metricminer&quot;)
 token &lt;- authorize(&quot;google&quot;)</code></pre>
 <p>Then you can use this object to extract two secrets by printing them
 out like this and you will need to store both to your metricminer
-dashboard GitHub secrets (which we will describe how to here).</p>
+dashboard GitHub secrets.</p>
 <p>First, return to your metricminer dashboard repository and go to
 <code>Settings</code> &gt; <code>Secrets and variables</code> &gt;
-<code>Actions</code>. - Click on <code>New repository secret</code>.
-Name your new secret <em>exactly</em>
-<code>METRICMINER_GOOGLE_ACCESS</code> - Copy what is printed out in R
-when you run:</p>
+<code>Actions</code>.</p>
+<ul>
+<li>Click on <code>New repository secret</code>. Name your new secret
+<em>exactly</em> <code>METRICMINER_GOOGLE_ACCESS</code></li>
+<li>Copy what is printed out in R when you run:</li>
+</ul>
 <pre><code>token$credentials$access_token</code></pre>
 <p>and paste it into the <code>Secret</code> box and then click the
 green “Add secret” button.</p>
-<p>Repeat the same steps for the Refresh token except call this
-<code>METRICMINER_GOOGLE_REFRESH</code></p>
+<p>Repeat the same steps for the refresh token except call this
+<code>METRICMINER_GOOGLE_REFRESH</code>.</p>
 <pre><code>token$credentials$refresh_token</code></pre>
+</div>
+<div id="setting-up-calendly" class="section level3">
+<h3>Setting up Calendly</h3>
+<p>To set up Calendly authorization, <a
+href="https://calendly.com/integrations/api_webhooks">go to the Calendly
+API and webhooks integrations page</a> and click “Generate Token”.</p>
+<p>Underneath “Choose a name for this token”, pick a name that will
+remind you of this project. Click “Create Token” and Calendly will send
+you an authorization code to your email. After you enter that
+authorization code, click “Copy Token” and keep this handy.</p>
+<p>Then, return to your metricminer dashboard repository and go to
+<code>Settings</code> &gt; <code>Secrets and variables</code> &gt;
+<code>Actions</code>.</p>
+<ul>
+<li>Click on <code>New repository secret</code>. Name your new secret
+<em>exactly</em> <code>METRICMINER_CALENDLY</code></li>
+<li>Paste your token into the <code>Secret</code> box and then click the
+green “Add secret” button.</li>
+</ul>
+<p><strong>Important:</strong> metricminer does not remove or redact
+identifying information that may be included in the data you collect,
+such as names, email addresses, or Calendly meeting notes. Review your
+data before sharing or publishing it.</p>
+<p>After you’ve set up authorization you’ll need to check the following
+items in the <code>_config_automation.yml</code> file.</p>
+<pre><code>###### Calendly ######
+refresh-calendly: yes
+calendly_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-calendly</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>calendly_googlesheet</code>
+where you’d like the Calendly data to be saved. This will only be
+relevant if you’ve set <code>data_dest</code> to
+<code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-citations" class="section level3">
+<h3>Setting up Citations</h3>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://scholar.google.com/scholar"
+class="uri">https://scholar.google.com/scholar</a></li>
+<li>Search for the paper you are looking for the citation count.</li>
+<li>Click the <code>Cited by ___</code> button below the title of the
+paper.</li>
+<li>Copy and paste this in the <code>_config_automation.yml</code> file
+in the <code>citation_papers</code> section.</li>
+</ol>
+<pre><code>###### Citations ######
+refresh-citations: yes
+citation_papers: [
+  &quot;https://scholar.google.com/scholar?cites=6140457238337460780&quot;,
+  &quot;https://scholar.google.com/scholar?cites=15945159957067506879&quot; ]
+citation_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-citations</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>citation_googlesheet</code> if
+you’d like the citation data to be saved. This will only be relevant if
+you’ve set <code>data_dest</code> to <code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-cran" class="section level3">
+<h3>Setting up CRAN</h3>
+<p>In the <code>_config_automation.yml</code> file you will need to
+specify the CRAN packages that you would like metricminer to collect
+data from.</p>
+<pre><code>###### CRAN ######
+refresh-cran: yes
+cran_packages: [ metricminer, ottrpal ]
+cran_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-cran</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>cran_packages</code>, type the
+names of the packages that you’d like to collect data from on CRAN. Type
+them exactly as they are spelled, case sensitive, separated by commas.
+Delete the example package names we’ve put there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>cran_googlesheet</code> where
+you’d like the CRAN data to be saved. This will only be relevant if
+you’ve set <code>data_dest</code> to <code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-github" class="section level3">
+<h3>Setting up GitHub</h3>
+<ol style="list-style-type: decimal">
+<li>Create your GitHub secret by going to <a
+href="https://github.com/settings/tokens/new"
+class="uri">https://github.com/settings/tokens/new</a></li>
+<li>Make sure your GitHub secret has the <code>repo</code> and
+<code>workflow</code> scopes checked. Name it something that will remind
+you it has to do with your metricminer dashboard GitHub data, scroll to
+the bottom, and click “Generate Token”. Keep this page open for
+now.</li>
+<li>Return to your metricminer dashboard repository and go to Settings
+&gt; Secrets and variables &gt; Actions.</li>
+<li>Click on <code>New repository secret</code>. Name your new secret
+<em>exactly</em> <code>METRICMINER_GITHUB_PAT</code>.</li>
+<li>Copy and paste your personal access token in the <code>Secret</code>
+box and then click the green “Add secret” button.</li>
+</ol>
+<p>This secret will be used by metricminer when collecting data from
+GitHub repositories.</p>
+<p>In the <code>_config_automation.yml</code> file you will need to
+specify which GitHub repositories you would like metricminer to collect
+data from.</p>
+<pre><code>###### GitHub ######
+refresh-github: yes
+github_repos: [ fhdsl/metricminer, fhdsl/metricminer.org ]
+github_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-github</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>github_repos</code>, specify
+the names of the repositories you’d like to collect data from. Make sure
+each one includes the <code>owner/repository</code>, for example
+<code>fhdsl/metricminer</code>, not just <code>metricminer</code>.
+Separate repositories with commas. Delete the example repositories we’ve
+put there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>github_googlesheet</code>
+where you’d like the GitHub data to be saved. This will only be relevant
+if you’ve set <code>data_dest</code> to <code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-google-analytics" class="section level3">
+<h3>Setting up Google Analytics</h3>
+<p><a href="#setting-up-google-authentication">Follow the steps from the
+Google authentication section</a> and make sure that the account you
+have authenticated has access to the Google Analytics properties you
+wish to collect.</p>
+<p>You’ll need to collect the Google Analytics property IDs for the
+websites you want to retrieve data from.</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://analytics.google.com/"
+class="uri">https://analytics.google.com/</a>. You may have to login.
+These instructions are assuming you have already set up Google Analytics
+and have been collecting data.</li>
+<li>Click on the website at the top of the navbar. It will bring you to
+a dropdown that shows all your websites.</li>
+<li>Click on one of the websites where you’d like to retrieve data from.
+The URL will look something like this:</li>
+</ol>
+<pre><code>https://analytics.google.com/analytics/web/?authuser=1#/p&lt;PROPERTY_ID_HERE&gt;/reports/home</code></pre>
+<p>Copy the property ID and put it in the <code>ga_property_ids</code>
+part of the <code>_config_automation.yml</code> file. Repeat these same
+steps for all the properties you’d like to collect data for, separating
+the IDs by commas. Delete the example IDs we have put there as
+placeholders.</p>
+<pre><code>###### Google Analytics ######
+refresh-ga: yes
+ga_property_ids: [ 422671031, 422558989 ]
+ga_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-ga</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>ga_property_ids</code>, specify
+the Google Analytics property IDs for the websites you’d like to collect
+data from. Separate property IDs with commas. Delete the example IDs
+we’ve put there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>ga_googlesheet</code> where
+you’d like the Google Analytics data to be saved. This will only be
+relevant if you’ve set <code>data_dest</code> to
+<code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-google-forms" class="section level3">
+<h3>Setting up Google Forms</h3>
+<p><a href="#setting-up-google-authentication">Follow the steps from the
+Google authentication section</a> and make sure that the account you
+have authenticated has access to the Google Forms you wish to
+collect.</p>
+<p>Go to a form you’d like to collect data from. The URL should look
+something like this:</p>
+<pre><code>https://docs.google.com/forms/u/1/d/&lt;GOOGLE_FORM_ID_HERE&gt;/edit?usp=drive_web</code></pre>
+<p>Extract the Google Form ID from the URL and put it in the
+<code>google_forms</code> section of the
+<code>_config_automation.yml</code> file. Do this for each form you’d
+like to collect data from and separate the form IDs with commas. Delete
+the example IDs we have put there as placeholders.</p>
+<pre><code>###### Google Forms ######
+refresh-googleforms: yes
+google_forms: [
+  1pbFfgUPYH2w9zEoCDjCa4HFOxzEhGOseufw28Xxmd-o,
+  1JjmsiuVoGSxvl-1M_oWittcftO955tijzeNc-cgJlo8 ]
+googleforms_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-googleforms</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>google_forms</code>, specify
+the Google Form IDs for the forms you’d like to collect data from.
+Separate form IDs with commas. Delete the example IDs we’ve put
+there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>googleforms_googlesheet</code>
+where you’d like the Google Forms data to be saved. This will only be
+relevant if you’ve set <code>data_dest</code> to
+<code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-slido" class="section level3">
+<h3>Setting up Slido</h3>
+<p>This is assuming you have already exported Slido data to a Google
+Drive folder. See the <a
+href="https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532">Slido
+export instructions</a> for how to do that.</p>
+<p>Navigate to the Google Drive folder that has the Slido data you’d
+like to collect. Get the URL for this folder. It should look like
+this:</p>
+<p><strong>Important:</strong> metricminer does not remove or redact
+identifying information that may be included in the data you collect,
+such as names, email addresses, Slido questions, or meeting notes.
+Review your data before sharing or publishing it.</p>
+<pre><code>https://drive.google.com/drive/u/1/folders/&lt;SOME_FOLDER_ID_HERE&gt;</code></pre>
+<p>Put the folder ID from this URL in the <code>drive_id</code> category
+in the <code>_config_automation.yml</code> file.</p>
+<pre><code>###### Slido ######
+refresh-slido: yes
+drive_id: 1XWXHHyj32Uw_UyaUJrqp6S--hHnM0-7l
+slido_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-slido</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>drive_id</code>, specify the
+Google Drive folder ID where your exported Slido data are saved. Delete
+the example folder ID we’ve put there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>slido_googlesheet</code> where
+you’d like the Slido data to be saved. This will only be relevant if
+you’ve set <code>data_dest</code> to <code>google</code>.</p></li>
+</ul>
+</div>
+<div id="setting-up-youtube" class="section level3">
+<h3>Setting up YouTube</h3>
+<p><a href="#setting-up-google-authentication">Follow the steps from the
+Google authentication section</a> and make sure that the account you
+have authenticated has access to the YouTube videos you wish to
+collect.</p>
+<p>Go to a video you’d like to collect data from. The URL should look
+something like this:</p>
+<pre><code>https://www.youtube.com/watch?v=&lt;YOUTUBE_VIDEO_ID_HERE&gt;</code></pre>
+<p>Extract the YouTube Video ID from the URL and put it in the
+<code>video_ids</code> section of the
+<code>_config_automation.yml</code> file. Do this for each video you’d
+like to collect data from and separate the IDs with commas. Delete the
+example IDs we have put there as placeholders.</p>
+<pre><code>###### YouTube ######
+refresh-youtube: yes
+video_ids: [ XN_QPRrJZAw, YkYnni-WuaQ ]
+youtube_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-youtube</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>video_ids</code>, specify the
+YouTube Video IDs for the videos you’d like to collect data from.
+Separate video IDs with commas. Delete the example IDs we’ve put
+there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>youtube_googlesheet</code>
+where you’d like the YouTube data to be saved. This will only be
+relevant if you’ve set <code>data_dest</code> to
+<code>google</code>.</p></li>
+</ul>
 <hr />
 <p>This work is funded by NCI UE5CA254170 as a part of the <a
 href="https://www.itcrtraining.org/">ITCR Training Network</a></p>

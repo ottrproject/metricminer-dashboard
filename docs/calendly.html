@@ -13,7 +13,7 @@
 
 <title>Calendly</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -35,8 +35,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="resources/images/favicon.ico" />
  <!--- go to https://favicon.io/favicon-converter/ to upload an image to make a new favicon.io. You will need to replace the current favicon.io image with the one in the downloaded directory from the website. The current image is in the resources/images/ directory --->
 
@@ -365,6 +365,20 @@ div.tocify {
   </a>
 </li>
 <li>
+  <a href="googleforms.html">
+    <span class="fa fa-wpforms"></span>
+     
+    Google Forms
+  </a>
+</li>
+<li>
+  <a href="slido.html">
+    <span class="a a-square-poll-vertical"></span>
+     
+    Slido
+  </a>
+</li>
+<li>
   <a href="youtube.html">
     <span class="fa fa-play"></span>
      
@@ -384,7 +398,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Calendly</h1>
-<h4 class="date">13 March, 2025</h4>
+<h4 class="date">24 July, 2026</h4>
 
 </div>
 
@@ -450,37 +464,41 @@ class="uri">https://api.calendly.com/scheduled_events/ac7a3d65-37ee-4277-a057-c3
 </div>
 <div id="setting-up-calendly" class="section level2">
 <h2>Setting Up Calendly</h2>
-<ol style="list-style-type: decimal">
-<li>To set up calendly authorization <a
-href="https://calendly.com/integrations/api_webhooks">go here</a> and
-click “Generate Token”.</li>
-<li>Underneath “Choose a name for this token” pick a name that will
-remind you of this project.</li>
-<li>Click “Create Token” and it will send you an authorization code to
-your email.</li>
-<li>Click “Copy Token” and keep this handy.</li>
-<li>Return to your metricminer dashboard repository and go to
+<p>To set up Calendly authorization, <a
+href="https://calendly.com/integrations/api_webhooks">go to the Calendly
+API and webhooks integrations page</a> and click “Generate Token”.</p>
+<p>Underneath “Choose a name for this token”, pick a name that will
+remind you of this project. Click “Create Token” and Calendly will send
+you an authorization code to your email. After you enter that
+authorization code, click “Copy Token” and keep this handy.</p>
+<p>Then, return to your metricminer dashboard repository and go to
 <code>Settings</code> &gt; <code>Secrets and variables</code> &gt;
-<code>Actions</code>.</li>
+<code>Actions</code>.</p>
+<ul>
 <li>Click on <code>New repository secret</code>. Name your new secret
 <em>exactly</em> <code>METRICMINER_CALENDLY</code></li>
 <li>Paste your token into the <code>Secret</code> box and then click the
 green “Add secret” button.</li>
-</ol>
+</ul>
+<p><strong>Important:</strong> metricminer does not remove or redact
+identifying information that may be included in the data you collect,
+such as names, email addresses, or Calendly meeting notes. Review your
+data before sharing or publishing it.</p>
 <p>After you’ve set up authorization you’ll need to check the following
 items in the <code>_config_automation.yml</code> file.</p>
-<ul class="task-list">
-<li><label><input type="checkbox" />In the
-<code>_config_automation.yml</code> file, make sure that
-<code>refresh-calendly</code> is set to “yes”.</label></li>
-<li><label><input type="checkbox" />Optionally, if you are saving data
-to google, specify a googlesheet ID you’d like the CRAN data to be saved
-to. This will only be relevant if you’ve set <code>data_dest</code> to
-<code>google</code>.</label></li>
-</ul>
 <pre><code>###### Calendly ######
 refresh-calendly: yes
 calendly_googlesheet:</code></pre>
+<ul class="task-list">
+<li><p><input type="checkbox" />In the
+<code>_config_automation.yml</code> file, make sure that
+<code>refresh-calendly</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>calendly_googlesheet</code>
+where you’d like the Calendly data to be saved. This will only be
+relevant if you’ve set <code>data_dest</code> to
+<code>google</code>.</p></li>
+</ul>
 </div>
 <div id="customizing-the-data" class="section level2">
 <h2>Customizing the data</h2>

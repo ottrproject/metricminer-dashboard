@@ -13,7 +13,7 @@
 
 <title>Slido</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -35,8 +35,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="resources/images/favicon.ico" />
  <!--- go to https://favicon.io/favicon-converter/ to upload an image to make a new favicon.io. You will need to replace the current favicon.io image with the one in the downloaded directory from the website. The current image is in the resources/images/ directory --->
 
@@ -365,6 +365,20 @@ div.tocify {
   </a>
 </li>
 <li>
+  <a href="googleforms.html">
+    <span class="fa fa-wpforms"></span>
+     
+    Google Forms
+  </a>
+</li>
+<li>
+  <a href="slido.html">
+    <span class="a a-square-poll-vertical"></span>
+     
+    Slido
+  </a>
+</li>
+<li>
   <a href="youtube.html">
     <span class="fa fa-play"></span>
      
@@ -384,7 +398,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Slido</h1>
-<h4 class="date">13 March, 2025</h4>
+<h4 class="date">24 July, 2026</h4>
 
 </div>
 
@@ -427,28 +441,35 @@ div.tocify {
 </div>
 <div id="setting-up-slido" class="section level2">
 <h2>Setting up Slido</h2>
-<p>This is assuming you have already exported Slido data to a google
-drive folder. See <a
+<p>This is assuming you have already exported Slido data to a Google
+Drive folder. See the <a
 href="https://community.slido.com/analytics-and-exports-44/export-your-questions-poll-results-quiz-leaderboard-and-ideas-532">Slido
-instructions here</a> for how to do that. Navigate to the Google Drive
-folder that has the Slidos you’d like to collect. Get the URL for this
-folder. It should look like this:</p>
+export instructions</a> for how to do that.</p>
+<p>Navigate to the Google Drive folder that has the Slido data you’d
+like to collect. Get the URL for this folder. It should look like
+this:</p>
+<p><strong>Important:</strong> metricminer does not remove or redact
+identifying information that may be included in the data you collect,
+such as names, email addresses, Slido questions, or meeting notes.
+Review your data before sharing or publishing it.</p>
 <pre><code>https://drive.google.com/drive/u/1/folders/&lt;SOME_FOLDER_ID_HERE&gt;</code></pre>
-<p>Put the folder id from this URL in your <code>drive_id:</code>
-category in the <code>_config_automation.yml</code> file.</p>
+<p>Put the folder ID from this URL in the <code>drive_id</code> category
+in the <code>_config_automation.yml</code> file.</p>
 <pre><code>###### Slido ######
 refresh-slido: yes
 drive_id: 1XWXHHyj32Uw_UyaUJrqp6S--hHnM0-7l
 slido_googlesheet:</code></pre>
 <ul class="task-list">
-<li><label><input type="checkbox" />In the
+<li><p><input type="checkbox" />In the
 <code>_config_automation.yml</code> file, make sure that
-<code>refresh-slido</code> is set to “yes”.</label></li>
-<li><label><input type="checkbox" />Optionally, if you are saving data
-to Google, specify a googlesheet ID in <code>slido_googlesheet</code>
-that you’d like the GitHub data to be saved to. This will only be
-relevant if you’ve set <code>data_dest</code> to
-<code>google</code>.</label></li>
+<code>refresh-slido</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>drive_id</code>, specify the
+Google Drive folder ID where your exported Slido data are saved. Delete
+the example folder ID we’ve put there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>slido_googlesheet</code> where
+you’d like the Slido data to be saved. This will only be relevant if
+you’ve set <code>data_dest</code> to <code>google</code>.</p></li>
 </ul>
 </div>
 <div id="customizing-the-slido-data" class="section level2">

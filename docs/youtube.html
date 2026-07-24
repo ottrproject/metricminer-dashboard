@@ -13,7 +13,7 @@
 
 <title>YouTube</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -35,8 +35,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="resources/images/favicon.ico" />
  <!--- go to https://favicon.io/favicon-converter/ to upload an image to make a new favicon.io. You will need to replace the current favicon.io image with the one in the downloaded directory from the website. The current image is in the resources/images/ directory --->
 
@@ -365,6 +365,20 @@ div.tocify {
   </a>
 </li>
 <li>
+  <a href="googleforms.html">
+    <span class="fa fa-wpforms"></span>
+     
+    Google Forms
+  </a>
+</li>
+<li>
+  <a href="slido.html">
+    <span class="a a-square-poll-vertical"></span>
+     
+    Slido
+  </a>
+</li>
+<li>
   <a href="youtube.html">
     <span class="fa fa-play"></span>
      
@@ -384,7 +398,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">YouTube</h1>
-<h4 class="date">13 March, 2025</h4>
+<h4 class="date">24 July, 2026</h4>
 
 </div>
 
@@ -406,20 +420,11 @@ favorited?</li>
 </ul>
 <pre class="r"><code>knitr::kable(youtube)</code></pre>
 <table>
-<colgroup>
-<col width="16%" />
-<col width="13%" />
-<col width="13%" />
-<col width="18%" />
-<col width="19%" />
-<col width="18%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">video</th>
 <th align="right">viewCount</th>
 <th align="right">likeCount</th>
-<th align="right">dislikeCount</th>
 <th align="right">favoriteCount</th>
 <th align="right">commentCount</th>
 </tr>
@@ -431,12 +436,10 @@ favorited?</li>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">YkYnni-WuaQ</td>
-<td align="right">46</td>
-<td align="right">0</td>
+<td align="right">54</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -447,30 +450,34 @@ favorited?</li>
 <div id="setting-up-youtube" class="section level2">
 <h2>Setting up YouTube</h2>
 <p><a href="#setting-up-google-authentication">Follow the steps from the
-above section to authenticate Google</a> – make sure that the account
-you have authenticated for has access to the YouTube you wish to
+Google authentication section</a> and make sure that the account you
+have authenticated has access to the YouTube videos you wish to
 collect.</p>
 <p>Go to a video you’d like to collect data from. The URL should look
 something like this:</p>
 <pre><code>https://www.youtube.com/watch?v=&lt;YOUTUBE_VIDEO_ID_HERE&gt;</code></pre>
-<p>Extract the Youtube Video ID from the URL and put it in the
+<p>Extract the YouTube Video ID from the URL and put it in the
 <code>video_ids</code> section of the
-<code>_config_automation.yml</code> file. Delete the example IDs we have
-put there as placeholders. Do this for each video you’d like to collect
-data from and separate the IDs with commas.</p>
+<code>_config_automation.yml</code> file. Do this for each video you’d
+like to collect data from and separate the IDs with commas. Delete the
+example IDs we have put there as placeholders.</p>
 <pre><code>###### YouTube ######
 refresh-youtube: yes
 video_ids: [ XN_QPRrJZAw, YkYnni-WuaQ ]
 youtube_googlesheet:</code></pre>
 <ul class="task-list">
-<li><label><input type="checkbox" />In the
+<li><p><input type="checkbox" />In the
 <code>_config_automation.yml</code> file, make sure that
-<code>refresh-slido</code> is set to “yes”.</label></li>
-<li><label><input type="checkbox" />Optionally, if you are saving data
-to Google, specify a googlesheet ID in <code>youtube_googlesheet</code>
-that you’d like the GitHub data to be saved to. This will only be
+<code>refresh-youtube</code> is set to “yes”.</p></li>
+<li><p><input type="checkbox" />In <code>video_ids</code>, specify the
+YouTube Video IDs for the videos you’d like to collect data from.
+Separate video IDs with commas. Delete the example IDs we’ve put
+there.</p></li>
+<li><p><input type="checkbox" />Optionally, if you are saving data to
+Google, specify a googlesheet ID in <code>youtube_googlesheet</code>
+where you’d like the YouTube data to be saved. This will only be
 relevant if you’ve set <code>data_dest</code> to
-<code>google</code>.</label></li>
+<code>google</code>.</p></li>
 </ul>
 </div>
 <div id="customizing-the-youtube-data" class="section level2">
