@@ -4,7 +4,7 @@
 4. Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_GITHUB_PAT`.
 5. Copy and paste your personal access token in the `Secret` box and then click the green "Add secret" button.
 
-metricminer uses this secret when collecting data from GitHub repositories.
+This secret will be used by metricminer when collecting data from GitHub repositories.
 
 In the `_config_automation.yml` file you will need to specify which GitHub repositories you would like metricminer to collect data from.
 
