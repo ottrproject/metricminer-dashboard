@@ -21,9 +21,12 @@ navbar:
   - text: Google Analytics
     href: googleanalytics.html
     icon: fa-google
-  #- text: Slido
-  #  href: slido.html
-  #  icon: a-square-poll-vertical
+  - text: Google Forms
+    href: googleforms.html
+    icon: fa-wpforms
+  - text: Slido
+    href: slido.html
+    icon: a-square-poll-vertical
   - text: Youtube
     href: youtube.html
     icon: fa-play

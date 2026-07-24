@@ -1,0 +1,58 @@
+## Setting up your config file
+
+Return to the `Code` on your metricminer dashboard GitHub repository and find the `_config_automation.yml` file. Open up that file and we will start setting up which metrics you'd like to retrieve.
+
+### Overall settings
+
+```{r child='overall-settings.Rmd'}
+```
+
+### Where your data are saved
+
+```{r child='data-destination.Rmd'}
+```
+
+### Setting up Google Authentication
+
+```{r child='google-authentication.Rmd'}
+```
+
+### Setting up Calendly
+
+```{r child='calendly.Rmd'}
+```
+
+### Setting up Citations
+
+```{r child='citations.Rmd'}
+```
+
+### Setting up CRAN
+
+```{r child='cran.Rmd'}
+```
+
+### Setting up GitHub
+
+```{r child='github.Rmd'}
+```
+
+### Setting up Google Analytics
+
+```{r child='google-analytics.Rmd'}
+```
+
+### Setting up Google Forms
+
+```{r child='google-forms.Rmd'}
+```
+
+### Setting up Slido
+
+```{r child='slido.Rmd'}
+```
+
+### Setting up YouTube
+
+```{r child='youtube.Rmd'}
+```

@@ -1,0 +1,35 @@
+```{r, include=FALSE}
+setup_google_access_target <- "the YouTube videos"
+```
+
+```{r child='google-authentication-reference.Rmd'}
+```
+
+Go to a video you'd like to collect data from. The URL should look something like this:
+
+```
+https://www.youtube.com/watch?v=<YOUTUBE_VIDEO_ID_HERE>
+```
+
+Extract the YouTube Video ID from the URL and put it in the `video_ids` section of the `_config_automation.yml` file. Do this for each video you'd like to collect data from and separate the IDs with commas. Delete the example IDs we have put there as placeholders.
+
+```
+###### YouTube ######
+refresh-youtube: yes
+video_ids: [ XN_QPRrJZAw, YkYnni-WuaQ ]
+youtube_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-youtube`"
+setup_googlesheet_field <- "`youtube_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the YouTube data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+- [ ] In `video_ids`, specify the YouTube Video IDs for the videos you'd like to collect data from. Separate video IDs with commas. Delete the example IDs we've put there.
+
+```{r child='google-sheet-destination-option.Rmd'}
+```

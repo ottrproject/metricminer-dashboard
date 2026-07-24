@@ -1,0 +1,28 @@
+Your metricminer dashboard will need permissions to Google if you are saving data there, or wanting to use any data from a Google product including Google Analytics, Google Forms, Google Drive, or YouTube.
+
+To set up Google Authentication for your metricminer dashboard, you'll need to open up R on your local computer and run the following code. If you aren't a regular R user you can always use [posit.cloud](https://posit.cloud/) to avoid the installation process.
+
+```
+install.packages("metricminer")
+library("metricminer")
+token <- authorize("google")
+```
+
+Then you can use this object to extract two secrets by printing them out like this and you will need to store both to your metricminer dashboard GitHub secrets.
+
+First, return to your metricminer dashboard repository and go to `Settings` > `Secrets and variables` > `Actions`.
+
+- Click on `New repository secret`. Name your new secret *exactly* `METRICMINER_GOOGLE_ACCESS`
+- Copy what is printed out in R when you run:
+
+```
+token$credentials$access_token
+```
+
+and paste it into the `Secret` box and then click the green "Add secret" button.
+
+Repeat the same steps for the refresh token except call this `METRICMINER_GOOGLE_REFRESH`.
+
+```
+token$credentials$refresh_token
+```

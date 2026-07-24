@@ -1,0 +1,8 @@
+1. To get started, go to the [metricminer-dashboard template GitHub repo](https://github.com/ottrproject/metricminer-dashboard)
+2. Click the green "Use this template" button in the upper right corner. If you do not see it, make sure you are logged in to GitHub and have an account.
+3. Name your new metricminer dashboard repository on this screen. Then click "Create new repository".
+4. Create your GitHub secret by going to https://github.com/settings/tokens/new
+5. Make sure your GitHub secret has the `repo` and `workflow` scopes checked. Name it something that will remind you it has to do with your metricminer dashboard, scroll to the bottom, and click "Generate Token". Keep this page open for now.
+6. Return to your metricminer dashboard repository and go to Settings > Secrets and variables > Actions.
+7. Click on `New repository secret`. Name your new secret *exactly* `GH_PAT`. OTTR uses this secret for general website tasks, including checks and rendering.
+8. Copy and paste your personal access token in the `Secret` box and then click the green "Add secret" button.

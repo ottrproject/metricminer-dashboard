@@ -1,0 +1,1 @@
+- [ ] In the `_config_automation.yml` file, make sure that `r setup_refresh_field` is set to "yes".

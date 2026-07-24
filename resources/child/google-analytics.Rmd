@@ -1,0 +1,39 @@
+```{r, include=FALSE}
+setup_google_access_target <- "the Google Analytics properties"
+```
+
+```{r child='google-authentication-reference.Rmd'}
+```
+
+You'll need to collect the Google Analytics property IDs for the websites you want to retrieve data from.
+
+1. Go to https://analytics.google.com/. You may have to login. These instructions are assuming you have already set up Google Analytics and have been collecting data.
+2. Click on the website at the top of the navbar. It will bring you to a dropdown that shows all your websites.
+3. Click on one of the websites where you'd like to retrieve data from. The URL will look something like this:
+
+```
+https://analytics.google.com/analytics/web/?authuser=1#/p<PROPERTY_ID_HERE>/reports/home
+```
+
+Copy the property ID and put it in the `ga_property_ids` part of the `_config_automation.yml` file. Repeat these same steps for all the properties you'd like to collect data for, separating the IDs by commas. Delete the example IDs we have put there as placeholders.
+
+```
+###### Google Analytics ######
+refresh-ga: yes
+ga_property_ids: [ 422671031, 422558989 ]
+ga_googlesheet:
+```
+
+```{r, include=FALSE}
+setup_refresh_field <- "`refresh-ga`"
+setup_googlesheet_field <- "`ga_googlesheet`"
+setup_google_sheet_destination <- "where you'd like the Google Analytics data to be saved"
+```
+
+```{r child='refresh-enabled-check.Rmd'}
+```
+
+- [ ] In `ga_property_ids`, specify the Google Analytics property IDs for the websites you'd like to collect data from. Separate property IDs with commas. Delete the example IDs we've put there.
+
+```{r child='google-sheet-destination-option.Rmd'}
+```
